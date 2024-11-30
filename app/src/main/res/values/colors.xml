@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- 라이트 모드와 다크 모드를 위한 색상 -->
+    <color name="colorPrimary">#6200EE</color> <!-- 기본 색상 -->
+    <color name="colorPrimaryVariant">#3700B3</color> <!-- 강조 색상 -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- 색상 위의 텍스트 색상 -->
+
+    <color name="colorSecondary">#03DAC5</color> <!-- 보조 색상 -->
+    <color name="colorSecondaryVariant">#018786</color> <!-- 보조 강조 색상 -->
+    <color name="colorOnSecondary">#000000</color> <!-- 보조 색상 위의 텍스트 색상 -->
+
+    <color name="colorBackground">#FFFFFF</color> <!-- 배경 색상 -->
+    <color name="colorTextPrimary">#000000</color> <!-- 기본 텍스트 색상 -->
+    <color name="colorTextSecondary">#757575</color> <!-- 보조 텍스트 색상 -->
 </resources>

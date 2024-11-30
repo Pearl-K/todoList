@@ -3,23 +3,21 @@ package com.example.todolist
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.todolist.db.AppDatabase
-import com.example.todolist.db.TodoDao
+import androidx.activity.viewModels
 import com.example.todolist.ui.screens.TodoListScreen
+import com.example.todolist.viewmodel.TodoViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private lateinit var db: AppDatabase
-    private lateinit var todoDao: TodoDao
+    private val todoViewModel: TodoViewModel by viewModels() // ViewModel Hilt로 주입
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        db = AppDatabase.getInstance(this)!!
-        todoDao = db.getTodoDao()
-
+        setTheme(R.style.Theme_TODOLIST)
         setContent {
-            TodoListScreen(todoDao)
+            TodoListScreen(todoViewModel = todoViewModel) // ViewModel 전달
         }
     }
 }

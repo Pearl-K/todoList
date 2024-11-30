@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- 기본 테마 -->
+    <style name="Theme.TODOLIST" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- 기본 색상 설정 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- 배경색 설정 -->
+        <item name="android:windowBackground">@color/colorBackground</item>
+
+        <!-- 텍스트 색상 설정 -->
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+
+        <!-- 액션바와 툴바 색상 설정 -->
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+</resources>
