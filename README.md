@@ -1,4 +1,2 @@
-## TodoList app 실습
+## TodoList app
 
-### 실습 기간
-- 24.03.17 ~

@@ -9,14 +9,14 @@ import androidx.room.Query
 interface TodoDao {
 
     // get ALL
-    @Query("SELECT * FROM TodoEntity")
-    fun getAllTodo() : List<TodoEntity>
+    @Query("SELECT * FROM todos")
+    suspend fun getAllTodo() : List<TodoEntity>
 
     // insert todo
     @Insert
-    fun insertTodo(todo: TodoEntity)
+    suspend fun insertTodo(todo: TodoEntity)
 
     // delete todo
     @Delete
-    fun deleteTodo(todo : TodoEntity)
+    suspend fun deleteTodo(todo : TodoEntity)
 }

@@ -1,43 +1,25 @@
 package com.example.todolist
 
-import android.os.Build.VERSION_CODES.R
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import com.example.todolist.databinding.ActivityMainBinding
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import com.example.todolist.db.AppDatabase
 import com.example.todolist.db.TodoDao
-import com.example.todolist.db.TodoEntity
+import com.example.todolist.ui.screens.TodoListScreen
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
-    private lateinit var binding : ActivityMainBinding
-
-    private lateinit var db : AppDatabase
-    private lateinit var todoDao : TodoDao
-    private lateinit var todoList : ArrayList<TodoEntity>
+    private lateinit var db: AppDatabase
+    private lateinit var todoDao: TodoDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
 
         db = AppDatabase.getInstance(this)!!
         todoDao = db.getTodoDao()
 
-        getAllTodoList()
-
-    }
-
-    private fun getAllTodoList(){
-        Thread{
-            todoList = ArrayList(todoDao.getAllTodo())
-            setRecyclerView() //recyclerview를 설정해서 보여주기기
+        setContent {
+            TodoListScreen(todoDao)
         }
     }
-
-    private fun setRecyclerView(){
-
-    }
-
 }
